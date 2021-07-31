@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/img_user"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/baseline_person_search_black_18dp"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnFavorite"
+                android:layout_gravity="top"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/red"
+                android:src="@drawable/baseline_favorite_white_18dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnUnfav"
+                android:layout_gravity="top|right"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/purple_200"
+                android:src="@drawable/baseline_delete_black_18dp" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_username"
+            android:text="@string/username"
+            android:textColor="#4CAF50"
+            android:textSize="32sp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/tab_follower"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tab_following"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/repository"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_weight="3" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_follower"
+                    android:text="@string/numfollowers"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_following"
+                    android:text="@string/numFollowing"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_repository"
+                    android:textStyle="bold"
+                    android:text="@string/url"
+                    android:textSize="14sp"
+                    android:layout_weight="3" />
+            </TableRow>
+        </TableLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tabs"
+            android:background="?attr/colorPrimary"
+            app:tabTextColor="@android:color/white"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:id="@+id/view_pager" />
+    </LinearLayout>
+</ScrollView>
